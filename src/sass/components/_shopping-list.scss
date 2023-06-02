@@ -1,0 +1,398 @@
+.main {
+  margin-bottom: 10%;
+}
+
+.body.light-theme {
+  .shopping-list__text {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .shopping-book {
+    color: $page-color-dark;
+  }
+
+  .book-text-title {
+    color: $shopping-list-title;
+  }
+}
+
+.body.dark-theme {
+  .shopping-book {
+    color: $page-color-light;
+    background-color: $shopping-list-title;
+  }
+
+  .shopping-list-header__main {
+    color: $page-color-light;
+  }
+
+  .shopping-list-header__span {
+    color: $page-color-accent;
+  }
+
+  .shopping-list__text {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .book-modal__link {
+    filter: contrast(-100%);
+  }
+}
+
+.shopping-list {
+  &__container {
+    margin: 40px 20px;
+
+    @include _desktop {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__desktop {
+    @include _desktop {
+      margin-left: 40px;
+      width: 100%;
+    }
+  }
+
+  &-header {
+    margin-bottom: 40px;
+
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.19;
+    letter-spacing: -0.04em;
+
+    // color: $page-color-dark;
+
+    @include _tablet {
+      font-size: 48px;
+      line-height: 1.08;
+    }
+
+    &__span {
+      color: $page-color-accent;
+    }
+  }
+
+  &__empty {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 80px;
+
+    width: 265px;
+    @include _tablet {
+      width: 349px;
+    }
+    @include _desktop {
+      margin-top: 140px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 14px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.29;
+
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    @include _tablet {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    text-align: center;
+  }
+}
+
+.shopping-book__tablet {
+  display: none;
+
+  @include _tablet {
+    display: flex;
+    gap: 24px;
+  }
+
+  @include _desktop {
+    display: flex;
+    gap: 24px;
+  }
+}
+
+.shopping-book__mobile {
+  @include _tablet {
+    display: none;
+  }
+
+  @include _desktop {
+    display: none;
+  }
+}
+
+.shopping-book {
+  position: relative;
+  padding: 20px;
+
+  border: 2px solid rgba(79, 46, 232, 0.4);
+  border-radius: 16px;
+
+  // background-color: $page-color-light;
+  // width: 100%;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.support-div {
+  display: none;
+
+  @include _desktop {
+    display: block;
+  }
+}
+
+.shopping-section {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 28px;
+  height: 28px;
+
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+}
+
+.delete-icon {
+  pointer-events: none;
+}
+
+.book {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.book__description {
+  margin-bottom: 32px;
+  height: 53px;
+  overflow: overlay;
+
+  @include _desktop {
+    width: 100%;
+  }
+}
+
+.book__img {
+  margin-bottom: 4px;
+}
+
+.book__img-tablet .cover {
+  width: 116px;
+  height: 165px;
+}
+
+.book__links {
+  align-items: center;
+}
+
+.book__link {
+  width: 100%;
+}
+
+.book__author {
+  margin-bottom: 48px;
+
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+
+  letter-spacing: -0.04em;
+  text-align: left;
+
+  color: #b4afaf;
+
+  @include _tablet {
+    margin-bottom: 0;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  text-align: left;
+  width: 100%;
+}
+
+.content__text-tablet {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.content__author-tablet {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+
+  letter-spacing: -0.04em;
+
+  color: $writer-color;
+}
+
+.book__text-title {
+  margin-bottom: 4px;
+  max-width: 144px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.12;
+
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+
+  @include _tablet {
+    max-width: fit-content;
+  }
+}
+
+.book__text-type {
+  margin-bottom: 24px;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.17;
+
+  letter-spacing: 0.03em;
+
+  color: #b4afaf;
+
+  @include _tablet {
+    margin-bottom: 14px;
+  }
+}
+
+.book__links {
+  width: 136px;
+  height: 30px;
+
+  display: flex;
+  gap: 14px;
+
+  @include _tablet {
+    width: 140px;
+    height: 30px;
+  }
+}
+
+// Пагінація
+
+.tui-pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin: 20px auto;
+  width: 323px;
+  height: 38px;
+
+  padding: 0px;
+
+  @include _desktop {
+    margin: 40px auto;
+  }
+}
+
+.tui-page-btn {
+  border-radius: 50%;
+  color: $page-color-dark;
+  vertical-align: middle;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.22;
+}
+.tui-page-btn.tui-first.tui-is-disabled,
+.tui-page-btn.tui-prev.tui-is-disabled,
+.tui-page-btn.tui-next.tui-is-disabled,
+.tui-page-btn.tui-last.tui-is-disabled,
+.tui-page-btn.tui-is-selected {
+  color: $page-color-light;
+  background-color: $shopping-list-title;
+}
+.tui-page-btn.tui-first,
+.tui-page-btn.tui-prev,
+.tui-page-btn.tui-next,
+.tui-page-btn.tui-last {
+  background-color: $current-page-color;
+  height: 38px;
+  width: 38px;
+}
+
+.tui-pagination .tui-first + .tui-prev,
+.tui-pagination .tui-next + .tui-last {
+  width: 38px;
+  // height: 38px;
+  border: 1px solid $shopping-list-title;
+}
+
+.tui-pagination .tui-page-btn {
+  width: 38px;
+  border-width: 1px 1px;
+  margin-left: 0;
+  padding: 8px 0 6px;
+  border: 1px solid $shopping-list-title;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.22;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+}
+
+.tui-pagination .tui-ico-first {
+  width: 12px;
+  height: 12px;
+  background-position: 0 0;
+}
+
+.tui-pagination .tui-ico-prev {
+  width: 7px;
+  height: 13px;
+  background-position: -26px 0;
+}
+
+.tui-pagination .tui-ico-next {
+  width: 7px;
+  height: 12px;
+  background-position: -13px -24px;
+}
+
+.tui-pagination .tui-ico-last {
+  width: 11px;
+  height: 12px;
+  background-position: 0 -12px;
+}

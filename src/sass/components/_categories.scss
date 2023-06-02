@@ -1,0 +1,74 @@
+.book-category {
+  overflow-x: auto;
+  overflow-x: hidden;
+  margin-bottom: 40px;
+  height: 228px;
+  width: 335px;
+
+  @media screen and (min-width: 768px) {
+    width: 337px;
+    height: 472px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 356px;
+    height: 472px;
+  }
+}
+
+.book-category::-webkit-scrollbar {
+  width: 8px;
+}
+
+.book-category::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background: #e0e0e0;
+}
+
+.category {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.125;
+
+  color: rgba(17, 17, 17, 0.6);
+  letter-spacing: -0.02em;
+  cursor: pointer;
+  @include transition(all);
+}
+
+.category:not(:last-child) {
+  @include _tablet {
+    width: $tablet;
+    margin-bottom: 32px;
+  }
+  margin-bottom: 24px;
+}
+.category.is-active,
+.category:hover,
+.category:focus {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.light-theme .category {
+  color: rgba(17, 17, 17, 0.6);
+}
+
+.dark-theme .category {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.light-theme .category.is-active,
+.light-theme .category:hover,
+.light-theme .category:focus {
+  color: #4f2ee8;
+}
+.dark-theme .category.is-active,
+.dark-theme .category:hover,
+.dark-theme .category:focus {
+  color: #eac645;
+}
+.dark-theme .book-category::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background: rgba(17, 17, 17, 0.6);
+}

@@ -1,0 +1,276 @@
+//upd
+
+.basicLightbox {
+  overflow-y: auto;
+}
+
+.book-modal {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 0%);
+  max-width: 335px;
+  width: 100%;
+  max-height: 100vh;
+  overflow-y: auto;
+  margin: 0 auto;
+  padding: 40px 24px;
+  background-color: $page-color-light;
+  border: 2px solid $page-color-dark;
+  border-radius: 18px;
+
+  @include _tablet {
+    max-width: 579px;
+    padding: 40px;
+  }
+
+  .dark-theme & {
+    background-color: $page-color-dark;
+    border: 2px solid $page-color-light;
+  }
+}
+
+.book-modal__close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+
+  @include _tablet {
+    top: 14px;
+    right: 14px;
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.close-icon {
+  fill: $page-color-dark;
+  width: 28px;
+  height: 28px;
+
+  .book-modal__close-button:hover &,
+  .book-modal__close-button:focus & {
+    fill: $page-color-accent;
+  }
+
+  @include _tablet {
+    width: 32px;
+    height: 32px;
+  }
+
+  .dark-theme & {
+    fill: $page-color-light;
+  }
+}
+
+.book-modal__content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  // max-height: 806px;
+}
+
+.book-modal__book {
+  @include _tablet {
+    display: flex;
+    margin-bottom: 40px;
+    justify-content: start;
+  }
+}
+
+.book-modal__img {
+  display: block;
+  width: 287px;
+  height: 408px;
+  border-radius: 8px;
+  margin: auto;
+  margin-bottom: 14px;
+
+  @include _tablet {
+    width: 192px;
+    height: 281px;
+    margin-left: 0;
+    margin-right: 24px;
+  }
+}
+
+.book-modal__title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 112%;
+  letter-spacing: -0.04em;
+
+  margin-bottom: 4px;
+  color: $shopping-list-title;
+  text-transform: uppercase;
+
+  @include _tablet {
+    font-size: 24px;
+    line-height: 117%;
+    margin-bottom: 8px;
+  }
+}
+
+.dark-theme .book-modal__title,
+.dark-theme .book-modal__description,
+.dark-theme .modal-book__button {
+  color: $page-color-light;
+  background-color: $page-color-dark;
+}
+
+.book-modal__author {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 117%;
+
+  margin-bottom: 18px;
+
+  letter-spacing: -0.04em;
+
+  color: $writer-color;
+
+  @include _tablet {
+    font-size: 14px;
+    line-height: 129%;
+    margin-bottom: 20px;
+  }
+}
+
+.book-modal__description {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 129%;
+
+  letter-spacing: -0.04em;
+  color: $page-color-dark;
+}
+
+.button-text {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 120%;
+  padding-top: 8px;
+
+  text-align: center;
+  letter-spacing: -0.04em;
+
+  color: rgba(17, 17, 17, 0.5);
+
+  @include _tablet {
+    font-size: 12px;
+    line-height: 117%;
+    width: 324px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.dark-theme .button-text {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.modal-book__button {
+  // display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 14px 28px;
+  border: 2px solid $page-color-accent;
+  border-radius: 40px;
+  background-color: $page-color-light;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  cursor: pointer;
+
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+
+  color: #111111;
+
+  @include _tablet {
+    padding: 20px;
+    font-size: 18px;
+    line-height: 133%;
+    width: 499px;
+  }
+}
+
+.modal-book__button-wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.modal-book__button-wrapper,
+.book-modal .btnAdd,
+.book-modal .btnRemove,
+.btnRemove-wrapper {
+  display: none;
+}
+
+.modal-book__button-wrapper,
+.book-modal .btnAdd.active,
+.book-modal .btnRemove.active,
+.btnRemove-wrapper.active {
+  display: block;
+  margin: 0 auto;
+}
+
+.modal-book__button:hover,
+.modal-book__button:focus {
+  background-color: $page-color-accent;
+  color: $page-color-light;
+}
+
+.book-modal__links {
+  margin-top: 14px;
+  margin-bottom: 40px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 36px;
+  filter: contrast(-100%);
+
+  @include _tablet {
+    margin-top: 20px;
+  }
+}
+
+.book-modal__link:hover {
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+}
+
+.book-modal__link {
+  height: 100%;
+  filter: grayscale(100%);
+}
+
+.amazon {
+  width: 62px;
+  height: 100%;
+}
+
+.applebooks {
+  width: 33px;
+  height: 100%;
+}
+
+.bookshop {
+  width: 38px;
+  height: 100%;
+}
